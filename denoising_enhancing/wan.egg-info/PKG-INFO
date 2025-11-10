@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: wan
+Version: 2.2.0
+Summary: Wan: Open and Advanced Large-Scale Video Generative Models
+Author-email: Wan Team <wan.ai@alibabacloud.com>
+Project-URL: homepage, https://wanxai.com
+Project-URL: documentation, https://github.com/Wan-Video/Wan2.2
+Project-URL: repository, https://github.com/Wan-Video/Wan2.2
+Project-URL: huggingface, https://huggingface.co/Wan-AI/
+Project-URL: modelscope, https://modelscope.cn/organization/Wan-AI
+Project-URL: discord, https://discord.gg/p5XbdQV7
+Requires-Python: <4.0,>=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=2.4.0
+Requires-Dist: torchvision>=0.19.0
+Requires-Dist: opencv-python>=4.9.0.80
+Requires-Dist: diffusers>=0.31.0
+Requires-Dist: transformers>=4.49.0
+Requires-Dist: tokenizers>=0.20.3
+Requires-Dist: accelerate>=1.1.1
+Requires-Dist: tqdm
+Requires-Dist: imageio
+Requires-Dist: easydict
+Requires-Dist: ftfy
+Requires-Dist: dashscope
+Requires-Dist: imageio-ffmpeg
+Requires-Dist: flash_attn_3
+Requires-Dist: numpy<2,>=1.23.5
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: huggingface-hub[cli]; extra == "dev"

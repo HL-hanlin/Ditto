@@ -104,8 +104,8 @@ def main(args):
         }
         metadatas.append(item)
     print(f'Filtered dataset size: {len(metadatas)}')
-    # end_idx = args.end_idx if args.end_idx is not None else len(metadatas)
-    # metadatas = metadatas[args.start_idx:end_idx]
+    end_idx = args.end_idx if args.end_idx is not None else len(metadatas)
+    metadatas = metadatas[args.start_idx:end_idx]
 
 
     # Split by rank
@@ -218,6 +218,8 @@ if __name__ == "__main__":
     parser.add_argument("--width", type=int, default=832, help="The width to use for video processing.")
     parser.add_argument("--num_frames", type=int, default=121, help="The number of video frames to process.")
     parser.add_argument("--seed", type=int, default=1, help="Random seed for reproducible results.")
+    parser.add_argument("--start_idx", type=int, default=0, help="Start row index for slicing")
+    parser.add_argument("--end_idx", type=int, default=None, help="End row index for slicing (exclusive)")
 
     parser.add_argument("--lora_alpha", type=float, default=1.0, help="The alpha (weight) value for the LoRA model.")
     parser.add_argument("--fps", type=int, default=20, help="Frames per second (FPS) for the output video.")
@@ -277,7 +279,13 @@ conda activate blip3o_new
 cd /home/hanlin/Bifrost-2/eval/V2V
 
 
-torchrun --nproc_per_node=8 Nov9_batch_infer_ditto.py --start_idx 0 --end_idx 304
+torchrun --nproc_per_node=8 Nov9_batch_infer_ditto.py --start_idx 0 --end_idx 80
+
+torchrun --nproc_per_node=8 Nov9_batch_infer_ditto.py --start_idx 80 --end_idx 160
+
+torchrun --nproc_per_node=8 Nov9_batch_infer_ditto.py --start_idx 160 --end_idx 240
+
+torchrun --nproc_per_node=8 Nov9_batch_infer_ditto.py --start_idx 240 --end_idx 304
 
 
 """

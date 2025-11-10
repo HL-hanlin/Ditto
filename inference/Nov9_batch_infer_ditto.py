@@ -289,3 +289,21 @@ torchrun --nproc_per_node=8 Nov9_batch_infer_ditto.py --start_idx 240 --end_idx 
 
 
 """
+
+
+
+"""
+
+SSH_KEY=id_rsa_pem_format
+chmod 600 /home/hanlin/.ssh/$SSH_KEY
+eval "$(ssh-agent -s)"
+ssh-add /home/hanlin/.ssh/$SSH_KEY
+ssh -o StrictHostKeyChecking=no git@github.com
+
+
+cd /home/hanlin
+[ -d "./Ditto" ] && rm -rf "./Ditto"
+git clone git@github.com:HL-hanlin/ditto.git
+cd /home/hanlin/Ditto
+
+"""

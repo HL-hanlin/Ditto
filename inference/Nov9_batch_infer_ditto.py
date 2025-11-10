@@ -265,7 +265,7 @@ api.upload_folder(
 
 """
 
-cd /home/hanlin/Bifrost-2/eval/V2V
+cd /home/hanlin/Ditto
 
 conda deactivate
 conda deactivate
@@ -274,9 +274,9 @@ conda deactivate
 
 source /home/hanlin/miniconda3/bin/activate
 
-conda activate blip3o_new
+conda activate ditto
 
-cd /home/hanlin/Bifrost-2/eval/V2V
+cd /home/hanlin/Ditto/inference
 
 
 torchrun --nproc_per_node=8 Nov9_batch_infer_ditto.py --start_idx 0 --end_idx 80
@@ -303,7 +303,7 @@ ssh -o StrictHostKeyChecking=no git@github.com
 
 cd /home/hanlin
 [ -d "./Ditto" ] && rm -rf "./Ditto"
-git clone git@github.com:HL-hanlin/ditto.git
+git clone git@github.com:HL-hanlin/Ditto.git
 cd /home/hanlin/Ditto
 
 """
